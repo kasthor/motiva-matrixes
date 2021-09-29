@@ -6,10 +6,10 @@ const baseTheme = {
   $danger: "",
   $mono: "",
   $gray: "#E0E1E3",
-  $black: "",
-  $white: "",
+  $black: "#000000",
+  $white: "#ffffff",
   $spacingBig: "",
-  $spacing: "",
+  $spacing: "1.5rem",
   $roundness: "",
 };
 

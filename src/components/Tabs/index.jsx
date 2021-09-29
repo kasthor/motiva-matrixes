@@ -1,10 +1,20 @@
 import styled from "styled-components";
 
 export const TabBar = styled.div`
-  --border-bottom-height: 5px;
+  --border-bottom-height: 2px;
   display: flex;
   box-shadow: 0px 10px 10px ${({ theme }) => theme.$gray};
   padding: 0px 0px var(--border-bottom-height) 0px;
+
+  overflow-x: auto;
+
+  --ms-overflow-style: none;
+  scrollbar-height: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Tab = styled.div`
@@ -14,6 +24,7 @@ export const Tab = styled.div`
   color: ${({ theme }) => theme.$gray};
   text-transform: uppercase;
   transition: color 200ms 200ms;
+  white-space: nowrap;
 
   &::after {
     content: "";
@@ -38,3 +49,17 @@ export const Tab = styled.div`
     }
   }
 `;
+
+export const Tabs = ({ tabs, ...props }) => {
+  const handleOnCLick = (id) => {
+    onSelect(id);
+  };
+
+  return (
+    <TabBar {...props}>
+      {tabs.map((tab, idx) => (
+        <Tab onClick={() => onSelect(idx)}>{tab}</Tab>
+      ))}
+    </TabBar>
+  );
+};
