@@ -2,6 +2,17 @@ import { useEffect, useState } from "preact/hooks";
 import { route } from "preact-router";
 import cards from "../../data/cards.json";
 
+const categoriesOrder = [
+  "Mini",
+  "Demi",
+  "Low",
+  "Medium",
+  "Full",
+  "Full Projection",
+  "Corsé",
+  "Corsé Projection",
+];
+
 import {
   Container,
   Logo,
@@ -33,8 +44,11 @@ export const Card = ({ brand, category }) => {
     Object.entries(obj).find(([k]) => cleanStr(k) === str);
 
   const getA = (arr, str) => arr.find((k) => cleanStr(k) === str);
+  const orderBy = (o) => (a, b) => o.indexOf(a) - o.indexOf(b);
 
-  const [brandName, categories] = getV(cards, brand);
+  let [brandName, categories] = getV(cards, brand);
+
+  categories = categories.sort(orderBy(categoriesOrder));
 
   useEffect(() => {
     route(`/card/${cleanStr(brand)}/${cleanStr(selectedCategory)}`, true);
