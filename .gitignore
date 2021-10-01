@@ -3,4 +3,4 @@ node_modules
 dist
 dist-ssr
 *.local
-./src/data/cards.json
+src/data/cards.json

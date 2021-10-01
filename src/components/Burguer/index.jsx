@@ -18,9 +18,9 @@ const StyledBurguer = styled.button`
 
   div {
     width: 2rem;
-    height: 0.2rem;
+    height: 0.01rem;
     background-color: ${({ theme, open }) =>
-      open ? theme.$white : theme.$primary};
+      open ? theme.$black : theme.$black};
     border-radius: 10px;
     position: relative;
     transform-origin: 1px;

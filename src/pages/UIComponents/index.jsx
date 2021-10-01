@@ -22,7 +22,7 @@ export const UIComponents = () => {
       <Typography />
       <Tabs />
       <Burguers open={drawerOpen} toggle={setDrawerOpen} />
-      <Drawer open={drawerOpen}/>
+      <Drawer open={drawerOpen} />
     </Container>
   );
 };

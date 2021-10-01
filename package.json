@@ -4,14 +4,21 @@
   "scripts": {
     "dev": "vite",
     "build": "node ./bin/build.js && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint --fix  ./src/**/*.jsx"
   },
   "dependencies": {
     "preact": "^10.5.13",
+    "preact-router": "^3.2.1",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-preact": "^1.1.4",
     "vite": "^2.5.4"
+  },
+  "eslintConfig": {
+    "extends": "preact"
   }
 }
