@@ -13,6 +13,18 @@ const categoriesOrder = [
   "Corsé Projection",
 ];
 
+const brandsOrder = [
+  "Ergonomix",
+  "Ergonomix Oval",
+  "Ergonomix2",
+  "Flora",
+  "Gluteal Armonic",
+  "MIA",
+  "Round",
+  "True Fixation",
+  "Sizers",
+];
+
 import {
   Container,
   Logo,
@@ -46,9 +58,12 @@ export const Card = ({ brand, category }) => {
   const getA = (arr, str) => arr.find((k) => cleanStr(k) === str);
   const orderBy = (o) => (a, b) => o.indexOf(a) - o.indexOf(b);
 
-  let [brandName, categories] = getV(cards, brand);
+  let brands = Object.keys(cards);
+  brands = brands.sort(orderBy(brandsOrder));
 
-  categories = categories.sort(orderBy(categoriesOrder));
+  let [brandName, categories] = brand && getV(cards, brand);
+
+  categories = categories ? categories.sort(orderBy(categoriesOrder)) : [];
 
   useEffect(() => {
     route(`/card/${cleanStr(brand)}/${cleanStr(selectedCategory)}`, true);
@@ -63,21 +78,31 @@ export const Card = ({ brand, category }) => {
   }, [category, categories]);
 
   document.title = `${brandName} - ${selectedCategory}`;
-
   return (
     <Container>
-      <Header>
-        <Logo />
-        <Title>{brandName}</Title>
-        <Burguer open={openDrawer} toggle={setOpenDrawer} />
-        <Drawer open={openDrawer}>
-          <Menu selected={brand} onClose={() => setOpenDrawer(false)} />
-        </Drawer>
-        <Tabs tabs={categories} onSelect={setSelectedCategory} />
-      </Header>
-      <Content>
-        <CardImage brand={brandName} category={selectedCategory} />
-      </Content>
+      {!brand ? (
+        <Menu main options={brands} selected={brand} />
+      ) : (
+        <>
+          <Header>
+            <Logo />
+            <Title>{brandName}</Title>
+            <Burguer open={openDrawer} toggle={setOpenDrawer} />
+            <Drawer open={openDrawer}>
+              <Menu
+                title="Menu"
+                options={brands}
+                selected={brand}
+                onClose={() => setOpenDrawer(false)}
+              />
+            </Drawer>
+            <Tabs tabs={categories} onSelect={setSelectedCategory} />
+          </Header>
+          <Content>
+            <CardImage brand={brandName} category={selectedCategory} />
+          </Content>
+        </>
+      )}
     </Container>
   );
 };

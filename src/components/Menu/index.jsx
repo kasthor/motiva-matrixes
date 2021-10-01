@@ -1,8 +1,9 @@
 import cards from "../../data/cards.json";
 import { route } from "preact-router";
-import { Container, Link, Title } from "./styles";
+import { Container, Header, Link, Title, Content } from "./styles";
+import logo from "../../assets/img/Motiva Logo Solid  WHITE 2019.svg";
 
-export const Menu = ({ selected, onClose }) => {
+export const Menu = ({ title, main, options, selected, onClose }) => {
   const cleanStr = (str) =>
     str
       .normalize("NFD")
@@ -17,26 +18,35 @@ export const Menu = ({ selected, onClose }) => {
       },
     } = e;
     route(href);
-    onClose();
+    onClose && onClose();
   };
 
   return (
-    <Container>
-      <Title>Menu</Title>
-      {Object.entries(cards).map(([brand], idx) => {
-        const cleanBrand = cleanStr(brand);
+    <Container main={main}>
+      {title && <Title>{title}</Title>}
+      {main && (
+        <Header>
+          <img src={logo} />
+          <p>Select one implant to see its matrixes</p>
+        </Header>
+      )}
+      <Content main={main}>
+        {options.map((brand, idx) => {
+          const cleanBrand = cleanStr(brand);
 
-        return (
-          <Link
-            key={idx}
-            onClick={handleOnClick}
-            selected={selected === cleanBrand}
-            data-href={`/card/${cleanBrand}`}
-          >
-            {brand}
-          </Link>
-        );
-      })}
+          return (
+            <Link
+              main={main}
+              key={idx}
+              onClick={handleOnClick}
+              selected={selected === cleanBrand}
+              data-href={`/card/${cleanBrand}`}
+            >
+              {brand}
+            </Link>
+          );
+        })}
+      </Content>
     </Container>
   );
 };
