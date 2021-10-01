@@ -13,12 +13,12 @@
       <rect id="Rectangle_1930-2" data-name="Rectangle 1930" width="332" height="143" rx="8" transform="translate(12 74)" fill="#fff"/>
     </g>
     <g id="Group_5154" data-name="Group 5154" transform="translate(31.068)">
-      <text id="FULL" transform="translate(114.932 235)" fill="#698736" font-size="20" font-family="Avenir-Roman, Avenir" letter-spacing="0.02em"><tspan x="-23.2" y="0">FULL</tspan></text>
+      <text id="FULL" transform="translate(114.932 235)" fill="#51615e" font-size="20" font-family="Avenir-Roman, Avenir" letter-spacing="0.02em"><tspan x="-23.2" y="0">FULL</tspan></text>
       <g id="icon-full-diamond" transform="translate(153.414 203)">
         <path id="Path_2249" data-name="Path 2249" d="M626.815,82.5c0-8.922,15.056-16.153,33.625-16.153s33.623,7.231,33.623,16.153v-.729c0,4.879-6.584,9.2-6.584,9.2s-9.612,6.553-27.039,6.553S633.4,90.975,633.4,90.975s-6.584-4.32-6.584-9.2Z" transform="translate(-626.788 -56.255)" fill="none" stroke="#d1d2d3" stroke-miterlimit="10" stroke-width="2"/>
         <path id="Path_2250" data-name="Path 2250" d="M626.815,86.707c0-11.471,15.056-25.52,33.627-25.52s33.623,14.049,33.623,25.52c0,11.565-15.066,25.643-33.629,25.643S626.815,98.272,626.815,86.707Z" transform="translate(-626.788 -61.187)" fill="none" stroke="#d1d2d3" stroke-miterlimit="10" stroke-width="2"/>
         <path id="Path_2251" data-name="Path 2251" d="M626.807,79.14c0-5.368,15.062-9.721,33.637-9.721s33.635,4.353,33.635,9.721v-.757c0,4.51-6.371,6.508-6.371,6.508s-8.693,4.031-27.266,4.031-27.082-3.959-27.082-3.959-6.652-2.34-6.553-6.58Z" transform="translate(-626.797 -53.327)" fill="none" stroke="#d1d2d3" stroke-miterlimit="10" stroke-width="2"/>
-        <path id="Path_2252" data-name="Path 2252" d="M626.8,85.46c0-13.561,15.068-21.585,33.662-21.585s33.658,8.355,33.658,21.585V84.8c0,2.872-.98,6.158-4.4,9.721,0,0-10.664,10.212-29.254,10.212s-28.869-9.925-28.869-9.925S626.8,90.349,626.8,84.8Z" transform="translate(-626.801 -58.62)" fill="none" stroke="#729849" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2252" data-name="Path 2252" d="M626.8,85.46c0-13.561,15.068-21.585,33.662-21.585s33.658,8.355,33.658,21.585V84.8c0,2.872-.98,6.158-4.4,9.721,0,0-10.664,10.212-29.254,10.212s-28.869-9.925-28.869-9.925S626.8,90.349,626.8,84.8Z" transform="translate(-626.801 -58.62)" fill="none" stroke="#51615e" stroke-miterlimit="10" stroke-width="2"/>
       </g>
     </g>
     <text id="A_Base_B_Projection_C_Arc_Length_V_Volume" data-name="A=Base   B=Projection   C=Arc Length   V=Volume" transform="translate(22 453.283)" fill="#333" font-size="14" font-family="Avenir-Roman, Avenir"><tspan x="0" y="0" xml:space="preserve">A=Base   B=Projection   C=Arc Length   V=Volume</tspan></text>
