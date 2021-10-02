@@ -28,7 +28,7 @@ jobs:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
       - name: Build image
-        run: docker build -t registry.digitalocean.com/qanta-registry/motiva-matrixes:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE
+        run: docker build --build-arg BASE_PATH=/motiva-matrixes -t registry.digitalocean.com/qanta-registry/motiva-matrixes:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE
 
       - name: Deploy Image to DigitalOcean Registry
         run: |
