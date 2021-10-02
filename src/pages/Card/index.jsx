@@ -45,6 +45,8 @@ export const Card = ({ brand, category }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
+  // TODO: useCardData hook
+
   const cleanStr = (str) =>
     str
       ?.normalize("NFD")
@@ -65,6 +67,8 @@ export const Card = ({ brand, category }) => {
 
   categories = categories ? categories.sort(orderBy(categoriesOrder)) : [];
 
+  // END: useCardData hook
+
   useEffect(() => {
     route(`/card/${cleanStr(brand)}/${cleanStr(selectedCategory)}`, true);
   }, [brand, selectedCategory]);
@@ -78,6 +82,7 @@ export const Card = ({ brand, category }) => {
   }, [category, categories]);
 
   document.title = `${brandName} - ${selectedCategory}`;
+
   return (
     <Container>
       {!brand ? (
