@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "node ./bin/build.js && vite build",
+    "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint --fix  ./src/**/*.jsx"
   },
   "dependencies": {
+    "color": "^4.0.1",
     "preact": "^10.5.13",
     "preact-router": "^3.2.1",
     "styled-components": "^5.3.1"
