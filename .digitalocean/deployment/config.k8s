@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: motiva-matrixes
+spec:
+  selector:
+    matchLabels:
+      app: motiva-matrixes
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: motiva-matrixes
+    spec:
+      containers:
+      - name: web
+        image: <IMAGE>
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: motiva-matrixes
+spec:
+  selector:
+    app: motiva-matrixes
+  ports:
+  - name: motiva-matrixes
+    port: 80
