@@ -101,7 +101,7 @@ export const Card = ({ brand, category }) => {
                 onClose={() => setOpenDrawer(false)}
               />
             </Drawer>
-            <Tabs tabs={categories} onSelect={setSelectedCategory} />
+            <Tabs selected={selectedCategory} tabs={categories} onSelect={setSelectedCategory} />
           </Header>
           <Content>
             <CardImage brand={brandName} category={selectedCategory} />

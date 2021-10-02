@@ -40,7 +40,7 @@ export const Tab = styled.div`
     transform: translateY(100%);
   }
 
-  &:hover {
+  &.selected {
     color: ${({ theme }) => theme.$primary};
 
     ::after {
