@@ -1,7 +1,7 @@
 import Color from "color";
 
 const baseTheme = {
-  $primary: "#796A8E",
+  $primary: "#6e0072",
   $warning: "",
   $danger: "",
   $mono: "",
