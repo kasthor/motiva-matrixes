@@ -6,7 +6,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build --base=$BASE_PATH
+RUN npm run build -- --base=$BASE_PATH
 
 FROM nginx
 WORKDIR /usr/share/nginx/html
