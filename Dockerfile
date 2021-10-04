@@ -10,4 +10,4 @@ RUN npm run build -- --base=$BASE_PATH
 
 FROM nginx
 WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/dist/* ./
+COPY --from=builder /app/dist/ ./
