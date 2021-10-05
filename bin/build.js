@@ -3,7 +3,7 @@ const path = require("path");
 
 const DATA_FILE = "./src/data/cards.json";
 const INDEX_FILE = "./src/data/index.js";
-const CARD_FILES = "./public/cards/";
+const CARD_FILES = "./src/assets/cards/";
 const IGNORE = [".DS_Store"];
 
 const readDirectory = (base) => {
