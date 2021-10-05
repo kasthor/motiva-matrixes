@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "color": "^4.0.1",
+    "history": "^5.0.1",
     "preact": "^10.5.13",
     "preact-router": "^3.2.1",
     "styled-components": "^5.3.1"
