@@ -1,6 +1,6 @@
 {
   "name": "motiva-matrixes",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "build": "node ./bin/build.js && vite build",
