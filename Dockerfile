@@ -1,4 +1,5 @@
 FROM node AS builder
+ENV LANG=en_US.UTF-8
 WORKDIR /app
 
 ARG BASE_PATH=/
