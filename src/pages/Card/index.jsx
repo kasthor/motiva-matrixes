@@ -38,7 +38,7 @@ import {
 import { Menu } from "../../components/Menu";
 
 const CardImage = ({ brand, category }) => (
-  <img src={`/cards/${brand}/${category}.svg`} />
+  <img src={`cards/${brand}/${category}.svg`} />
 );
 
 export const Card = ({ brand, category }) => {
@@ -101,7 +101,11 @@ export const Card = ({ brand, category }) => {
                 onClose={() => setOpenDrawer(false)}
               />
             </Drawer>
-            <Tabs selected={selectedCategory} tabs={categories} onSelect={setSelectedCategory} />
+            <Tabs
+              selected={selectedCategory}
+              tabs={categories}
+              onSelect={setSelectedCategory}
+            />
           </Header>
           <Content>
             <CardImage brand={brandName} category={selectedCategory} />
