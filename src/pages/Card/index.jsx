@@ -58,7 +58,8 @@ export const Card = ({ brand, category }) => {
     Object.entries(obj).find(([k]) => cleanStr(k) === str);
 
   const getA = (arr, str) => arr.find((k) => cleanStr(k) === str);
-  const orderBy = (o) => (a, b) => o.indexOf(a) - o.indexOf(b);
+  const orderBy = (o) => (a, b) =>
+    o.indexOf(a.normalize("NFD")) - o.indexOf(b.normalize("NFD"));
 
   let brands = Object.keys(cards);
   brands = brands.sort(orderBy(brandsOrder));
