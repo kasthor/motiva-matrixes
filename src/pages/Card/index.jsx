@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import { route } from "preact-router";
-import cards from "../../data/cards.json";
+import { cards, cardImages } from "../../data/";
 
 const categoriesOrder = [
   "Mini",
@@ -38,7 +38,7 @@ import {
 import { Menu } from "../../components/Menu";
 
 const CardImage = ({ brand, category }) => (
-  <img src={`cards/${brand}/${category}.svg`} />
+  <img src={cardImages[`${brand}/${category}`]} />
 );
 
 export const Card = ({ brand, category }) => {
