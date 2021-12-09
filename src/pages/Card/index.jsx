@@ -84,7 +84,7 @@ export const Card = ({ brand, category }) => {
     }
   }, [category, categories]);
 
-  document.title = `${brandName} - ${selectedCategory}`;
+  document.title = `${t(`brand.${cleanStr(brandName)}`)} - ${selectedCategory}`;
 
   return (
     <Container>
