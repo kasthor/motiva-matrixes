@@ -84,7 +84,7 @@ export const Card = ({ brand, category }) => {
     }
   }, [category, categories]);
 
-  document.title = `${t(`brand.${cleanStr(brandName)}`)} - ${selectedCategory}`;
+  document.title = brandName ? `${t(`brand.${cleanStr(brandName)}`)} - ${selectedCategory}` : t( "site.title" );
 
   return (
     <Container>

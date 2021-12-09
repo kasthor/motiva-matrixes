@@ -9,6 +9,9 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        site: {
+          title: "Motiva®"
+        },
         cover: {
           title: "Breast Aesthetic <strong>Solutions</strong>",
           description: 
