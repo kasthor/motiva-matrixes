@@ -3,6 +3,7 @@ import logo from "../../assets/img/welcome-imagen+logo.svg";
 import { H1, Small } from "../../components/Typography";
 import { Button } from "../../components/Button";
 import { route } from "preact-router";
+import { Trans, useTranslation } from "react-i18next";
 
 export const Background = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ export const Title = styled(H1)`
   font-weight: 100;
   transform: translateY(-50%);
   color: ${({ theme }) => theme.$primary};
-  b {
+  strong {
     font-weight: 300;
   }
 `;
@@ -63,29 +64,23 @@ export const ButtonContainer = styled.div`
     width: 100%;
   }
 `;
-export const Cover = () => (
-  <>
+export const Cover = () => {
+  const {t} = useTranslation();
+
+  return (<>
     <Background></Background>
     <Container>
       <Title>
-        Breast aestetic <b>solutions</b>
+        <Trans i18nKey="cover.title" />
       </Title>
       <Content>
-        <p>
-          Created with patient safety in mind, through state-of-the-art
-          technologies and the workd's most comprehensive advance smooth implant
-          range.
-        </p>
-        <p>
-          Use Motiva implant matrixes to find over 600 options for tailored
-          results.
-        </p>
+        {t("cover.description", { returnObjects: true }).map?.(i => <p>{i}</p>)}
       </Content>
       <ButtonContainer>
         <Button onClick={() => route("/card")}>
-          Tap to see Motiva Implants
+          {t("cover.action")}
         </Button>
       </ButtonContainer>
     </Container>
-  </>
-);
+  </>);
+};

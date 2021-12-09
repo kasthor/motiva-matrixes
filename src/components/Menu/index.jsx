@@ -2,8 +2,10 @@ import cards from "../../data/cards.json";
 import { route } from "preact-router";
 import { Container, Header, Link, Title, Content } from "./styles";
 import logo from "../../assets/img/Motiva Logo Solid  WHITE 2019.svg";
+import { useTranslation } from 'react-i18next';
 
 export const Menu = ({ title, main, options, selected, onClose }) => {
+  const {t} = useTranslation();
   const cleanStr = (str) =>
     str
       .normalize("NFD")
@@ -42,7 +44,7 @@ export const Menu = ({ title, main, options, selected, onClose }) => {
               selected={selected === cleanBrand}
               data-href={`/card/${cleanBrand}`}
             >
-              {brand}
+              {t(`brand.${cleanStr(brand)}`)}
             </Link>
           );
         })}

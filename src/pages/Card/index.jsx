@@ -1,6 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import { route } from "preact-router";
 import { cards, cardImages } from "../../data/";
+import { useTranslation } from "react-i18next";
 
 const categoriesOrder = [
   "Mini",
@@ -47,6 +48,7 @@ export const Card = ({ brand, category }) => {
 
   // TODO: useCardData hook
 
+  const {t} = useTranslation();
   const cleanStr = (str) =>
     str
       ?.normalize("NFD")
@@ -92,11 +94,11 @@ export const Card = ({ brand, category }) => {
         <>
           <Header>
             <Logo />
-            <Title>{brandName}</Title>
+            <Title>{t(`brand.${cleanStr(brandName)}`)}</Title>
             <Burguer open={openDrawer} toggle={setOpenDrawer} />
             <Drawer open={openDrawer}>
               <Menu
-                title="Menu"
+                title={t("menu.title")}
                 options={brands}
                 selected={brand}
                 onClose={() => setOpenDrawer(false)}
