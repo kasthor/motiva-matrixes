@@ -29,7 +29,7 @@ export const Menu = ({ title, main, options, selected, onClose }) => {
       {main && (
         <Header>
           <img src={logo} />
-          <p>Select one implant to see its matrixes</p>
+          <p>{ t("menu.instructions") }</p>
         </Header>
       )}
       <Content main={main}>

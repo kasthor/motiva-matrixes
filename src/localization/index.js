@@ -19,7 +19,8 @@ i18n.use(initReactI18next).init({
           action: "Tap to explore Motiva® Implant Matrixes"
         },
         menu: {
-          title: "Menu"
+          title: "Menu",
+          instructions: "Select one implant to see its matrixes."
         },
         brand: { 
           ergonomix: "Ergonomix®",
